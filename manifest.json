@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Collection Info Mint",
+    "version": "1.0",
+    "description": "Extensão para ajudar a retornar informações sobre a pagina de mint da lighthouse de forma mais rapida. Criado por Dantger",
+    "permissions": [
+        "activeTab"
+    ],
+    "action": {
+        "default_icon": "imgs/icon.png",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "imgs/icon.png",
+        "48": "imgs/icon.png",
+        "128": "imgs/icon.png"
+    }
+}
