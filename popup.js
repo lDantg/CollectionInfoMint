@@ -11,7 +11,7 @@ function performAction() {
         getCollectionADDRFromMintSite(siteUrl)
             .then(response => {
                 console.log("All Mint info collected successfully");
-                
+                getCollectionInfo(response.endereco);
                 document.getElementById('collectionInfo').innerText = `Collection Address: ${response.endereco} \n\n`;
                 const linkDagora = `https://dagora.xyz/collection/seiMainnet/${response.endereco}/onSale`;
                 const linkName = "Dagora Marketplace Link - Click to Copy"
@@ -118,3 +118,22 @@ function getCollectionADDRFromMintSite(url) {
     });
 }
 
+async function getCollectionInfo(addCollection) {
+    const url = `https://celatone-api-prod.alleslabs.dev/v1/sei/pacific-1/contracts/${addCollection}/info?is_gov=true`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Erro ao obter a resposta da API.');
+        }
+        const data = await response.json();
+        const verifyFrozen = JSON.parse(data.contract.init_msg).frozen;
+        const verifyHide = JSON.parse(data.contract.init_msg).hidden_metadata;
+        let isFrozen = verifyFrozen ? "Yes" : "No";
+        let isHideReveal = verifyHide ? "Yes" : "No";
+        document.getElementById('frozenInfo').innerText = `Frozen: ${isFrozen}`;
+        document.getElementById('hideRevealInfo').innerText = `Hide Reveal: ${isHideReveal}`;
+
+    } catch (error) {
+        console.error("Erro na requisição:", error.message);
+    }
+}
