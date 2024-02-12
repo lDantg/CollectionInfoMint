@@ -1,3 +1,6 @@
+12/02/2024
+v1.0.1 - Added Frozen and Hidden Info
+
 ![Sem Título-1](https://github.com/lDantger/CollectionInfoMint/assets/159814776/85fb4198-c239-42e2-b1d1-9c33f5afc2bc)
 
 A extensão tem o objetivo de retornar informações sobre coleções a serem mintadas via LightHouse
