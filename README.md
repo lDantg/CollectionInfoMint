@@ -1,6 +1,7 @@
 ![Sem Título-1](https://github.com/lDantger/CollectionInfoMint/assets/159814776/85fb4198-c239-42e2-b1d1-9c33f5afc2bc)
 
 A extensão tem o objetivo de retornar informações sobre coleções a serem mintadas via LightHouse
+
 Informações:
 - Endereço da coleção
 - Link Dagora da coleção ( Clicar para copiar para clipboard )
